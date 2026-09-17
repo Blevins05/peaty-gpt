@@ -1,0 +1,39 @@
+# PeatyGPT — Análisis de requisitos (v0)
+
+## Descripción
+
+PeatyGPT es un chatbot agéntico que explica la filosofía de nutrición de Ray
+Peat a partir de sus textos originales, citando siempre la fuente.
+
+## 1. Objetivo
+
+Chatbot agéntico basado en RAG que responde preguntas sobre la bioenergética
+de Ray Peat usando sus textos originales como única fuente de verdad,
+citando siempre de dónde saca la información.
+
+## 2. Alcance — qué SÍ hace
+
+- Explica conceptos de la filosofía Peat (tiroides, PUFA vs. grasas
+  saturadas, azúcar/fruta como energía, ratio Ca/P, CO2, etc.)
+- Responde citando el artículo/fuente concreta de raypeat.com
+- Dice "no lo sé" si la pregunta no está cubierta en el corpus
+
+## 3. Alcance — qué NO hace
+
+- No prescribe dosis de suplementos, hormonas (tiroides, progesterona) ni
+  fármacos
+- No da consejo médico personalizado ("tengo síntoma X, ¿qué tomo?")
+- No sustituye a un profesional sanitario — y lo dice explícitamente cuando
+  la pregunta se acerca a ese terreno
+
+## 4. Usuarios
+
+- Uso propio (CdU principal)
+- Curiosos que quieran descubrir la filosofía Peat sin tener que bucear en
+  decenas de artículos en inglés
+
+## 5. Requisitos funcionales
+
+- Ingesta de fuentes de raypeat.com -> chunking -> embeddings -> Chroma
+- Retrieval + generación con citación de fuente
+- Interfaz mínima para conversar (Gradio o CLI, a decidir)
